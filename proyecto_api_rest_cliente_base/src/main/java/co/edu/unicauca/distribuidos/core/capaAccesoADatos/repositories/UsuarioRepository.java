@@ -40,6 +40,19 @@ public class UsuarioRepository {
 		return objCliente;
 	}
 
+	public boolean findByCodigo(String codigo){
+		System.out.println("Invocando verificar si existe un cliente con codigo");
+		boolean bandera=false;
+
+		for(ClienteEntity cliente: listaDeClientes){
+			if(cliente.getCodigo().equals(codigo)){
+				bandera=true;
+				break;
+			}
+		}
+		return bandera;
+	}
+
 	public ClienteEntity save(ClienteEntity cliente) {
 		System.out.println("Invocando a almacenar cliente");
 		cliente.setId(pos);
@@ -83,13 +96,13 @@ public class UsuarioRepository {
 	}
 
 	private void cargarClientes() {
-		ClienteEntity objCliente1 = new ClienteEntity(1, "Juan", "Perez", "juan@unicauca.edu.co", new Date());
+		ClienteEntity objCliente1 = new ClienteEntity(1, 123456,"Juan", "Perez", "juan@unicauca.edu.co", new Date());
 		this.listaDeClientes.add(objCliente1);
-		ClienteEntity objCliente2 = new ClienteEntity(2, "Catalina", "Lopez", "catalina@unicauca.edu.co", new Date());
+		ClienteEntity objCliente2 = new ClienteEntity(2, 321456,"Catalina", "Lopez", "catalina@unicauca.edu.co", new Date());
 		this.listaDeClientes.add(objCliente2);
-		ClienteEntity objCliente3 = new ClienteEntity(3, "Sandra", "Sanchez", "Sandra@unicauca.edu.co", new Date());
+		ClienteEntity objCliente3 = new ClienteEntity(3, 769456,"Sandra", "Sanchez", "Sandra@unicauca.edu.co", new Date());
 		this.listaDeClientes.add(objCliente3);
-		ClienteEntity objCliente = new ClienteEntity(4, "Andres", "Perez", "andres@unicauca.edu.co", new Date());
+		ClienteEntity objCliente = new ClienteEntity(4, 133456, "Andres", "Perez", "andres@unicauca.edu.co", new Date());
 		this.listaDeClientes.add(objCliente);
 	}
 

@@ -1,11 +1,11 @@
 
 import { Cliente } from '../modelos/cliente';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SweetAlert2LoaderService, SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
-import {ClienteService} from '../servicios/cliente';
+import {ClienteService} from '../servicios/clienteService';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -16,14 +16,14 @@ import Swal from 'sweetalert2';
 })
 export class Clientes {
 
-  clientes: Cliente[] = [];
+  clientes= signal<Cliente[]>([]);
 
   constructor(private objClienteService: ClienteService) {}
   ngOnInit(): void {
     this.objClienteService.getClientes().subscribe(
       clientes =>{
         console.log("listando clientes");
-        this.clientes = clientes;
+        this.clientes.set(clientes);
       }
     )
   }

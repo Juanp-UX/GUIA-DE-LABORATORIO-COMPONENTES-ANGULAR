@@ -75,4 +75,10 @@ public class ClienteRestController {
 		return bandera;
 	}
 
+	@GetMapping("/clientes/codigo/{codigo}")
+	public ResponseEntity<Boolean> existeClienteCodigo (@PathVariable String codigo){
+		Boolean bandera= clienteService.existeClienteCodigo(codigo);
+		ResponseEntity<Boolean> objRespuesta = new ResponseEntity<Boolean>(bandera,HttpStatus.OK);
+		return objRespuesta;
+	}
 }

@@ -25,6 +25,10 @@ public class ClienteServiceImpl implements IClienteService {
 	}
 
 	@Override
+	public boolean existeClienteCodigo(String codigo){
+		return this.servicioAccesoBaseDatos.findByCodigo(codigo);
+	}
+	@Override
 	public List<ClienteDTO> findAll() {
 
 		List<ClienteEntity> clientesEntity = this.servicioAccesoBaseDatos.findAll();
@@ -61,4 +65,6 @@ public class ClienteServiceImpl implements IClienteService {
 	public boolean delete(Integer id) {
 		return this.servicioAccesoBaseDatos.delete(id);
 	}
+
+
 }
