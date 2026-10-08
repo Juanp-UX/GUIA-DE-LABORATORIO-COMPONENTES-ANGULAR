@@ -96,13 +96,13 @@ public class UsuarioRepository {
 	}
 
 	private void cargarClientes() {
-		ClienteEntity objCliente1 = new ClienteEntity(1, 123456,"Juan", "Perez", "juan@unicauca.edu.co", new Date());
+		ClienteEntity objCliente1 = new ClienteEntity(1, "123456","Juan", "Perez", "juan@unicauca.edu.co", new Date());
 		this.listaDeClientes.add(objCliente1);
-		ClienteEntity objCliente2 = new ClienteEntity(2, 321456,"Catalina", "Lopez", "catalina@unicauca.edu.co", new Date());
+		ClienteEntity objCliente2 = new ClienteEntity(2, "321456","Catalina", "Lopez", "catalina@unicauca.edu.co", new Date());
 		this.listaDeClientes.add(objCliente2);
-		ClienteEntity objCliente3 = new ClienteEntity(3, 769456,"Sandra", "Sanchez", "Sandra@unicauca.edu.co", new Date());
+		ClienteEntity objCliente3 = new ClienteEntity(3, "769456","Sandra", "Sanchez", "Sandra@unicauca.edu.co", new Date());
 		this.listaDeClientes.add(objCliente3);
-		ClienteEntity objCliente = new ClienteEntity(4, 133456, "Andres", "Perez", "andres@unicauca.edu.co", new Date());
+		ClienteEntity objCliente = new ClienteEntity(4, "133456", "Andres", "Perez", "andres@unicauca.edu.co", new Date());
 		this.listaDeClientes.add(objCliente);
 	}
 

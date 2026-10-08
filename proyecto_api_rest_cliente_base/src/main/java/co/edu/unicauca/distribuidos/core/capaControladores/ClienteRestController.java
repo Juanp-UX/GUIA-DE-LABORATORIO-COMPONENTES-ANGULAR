@@ -4,6 +4,8 @@ package co.edu.unicauca.distribuidos.core.capaControladores;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -78,7 +80,7 @@ public class ClienteRestController {
 	@GetMapping("/clientes/codigo/{codigo}")
 	public ResponseEntity<Boolean> existeClienteCodigo (@PathVariable String codigo){
 		Boolean bandera= clienteService.existeClienteCodigo(codigo);
-		ResponseEntity<Boolean> objRespuesta = new ResponseEntity<Boolean>(bandera,HttpStatus.OK);
+		ResponseEntity<Boolean> objRespuesta = new ResponseEntity<Boolean>(bandera, HttpStatus.OK);
 		return objRespuesta;
 	}
 }
